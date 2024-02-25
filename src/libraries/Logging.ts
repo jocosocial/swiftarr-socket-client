@@ -5,6 +5,6 @@ import winston from "winston";
  */
 export const logger = winston.createLogger({
   level: 'info',
-  format: winston.format.cli(),
-  transports: [new winston.transports.Console()],
+  format: winston.format.combine(winston.format.timestamp(), winston.format.logstash()),
+  transports: [new winston.transports.Console({})],
 });
