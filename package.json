@@ -1,0 +1,40 @@
+{
+  "name": "swiftarr-socket-client",
+  "version": "0.0.0",
+  "description": "CLI for Swiftarr WebSocket events",
+  "keywords": [
+    "swiftarr",
+    "twitarr",
+    "websocket",
+    "ws",
+    "cli"
+  ],
+  "homepage": "https://github.com/jocosocial/swiftarr-socket-client",
+  "author": {
+    "name": "Grant Cohoe",
+    "email": "grant@grantcohoe.com",
+    "url": "https://grantcohoe.com"
+  },
+  "license": "MIT",
+  "bin": {
+    "swiftarr-socket-client": "src/swiftarr-socket-client.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jocosocial/swiftarr-socket-client.git"
+  },
+  "engines": {
+    "node": ">=18.16.1"
+  },
+  "bugs": {
+    "url": "https://github.com/jocosocial/swiftarr-socket-client/issues"
+  },
+  "dependencies": {
+    "reconnecting-websocket": "^4.4.0",
+    "ws": "^8.16.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.20",
+    "@types/ws": "^8.5.10"
+  }
+}
