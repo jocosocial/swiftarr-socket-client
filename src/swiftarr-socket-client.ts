@@ -1,63 +1,20 @@
 #!/usr/bin/env ts-node
 
-import ReconnectingWebSocket from "reconnecting-websocket";
-import {default as WebSocket} from 'ws';
-import {Command} from 'commander';
+import { Command } from '@commander-js/extra-typings';
+import {buildSocket} from "./libraries/Socket";
 
 const program = new Command();
-
 program
-    .name('swiftarr-socket-client')
-    .description('CLI for Swiftarr WebSocket events')
-    .version('0.0.0')
+  .name('swiftarr-socket-client')
+  .description('CLI for Swiftarr WebSocket events')
+  .version('0.0.0');
 
-if (process.argv.length !== 4) {
-    console.error('Usage: node krakentalk_listener.js <server_url> <token>');
-    process.exit(1); // Exit with an error code
-}
+program.command('listen')
+  .description('Start listening to a socket.')
+  .requiredOption('-s, --server-url <string>', 'Server base URL including scheme.')
+  .requiredOption('-t, --token <string>', 'Auth token.')
+  .action((options) => {
+    buildSocket(options.serverUrl, options.token);
+  });
 
-// Extract the command line arguments
-const serverUrl = process.argv[2];
-const token = process.argv[3];
-
-const authHeaders = {
-    authorization: `Bearer ${token}`,
-};
-
-const wsUrl = `${serverUrl}/api/v3/notification/socket`;
-console.log(wsUrl);
-
-
-function WebSocketConstructor(options: { headers: { authorization: string; }; }) {
-    return class extends WebSocket {
-        constructor(url: string | URL, protocols: string | string[]) {
-            super(url, protocols, options);
-        }
-    };
-}
-
-const socket = new ReconnectingWebSocket(wsUrl, [], {
-    WebSocket: WebSocketConstructor({
-        headers: authHeaders,
-    }),
-    connectionTimeout: 10000,
-    maxRetries: 20,
-    minReconnectionDelay: 10000,
-    maxReconnectionDelay: 30000,
-    reconnectionDelayGrowFactor: 2,
-});
-
-socket.addEventListener('open', event => {
-    console.log('Socket Open');
-});
-
-socket.addEventListener('close', event => {
-    console.log('Socket Close');
-});
-
-socket.addEventListener('message', event => {
-    console.log('Message');
-    console.log(event.data);
-});
-
-console.log(socket.readyState);
+program.parse();

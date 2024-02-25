@@ -30,13 +30,21 @@
     "url": "https://github.com/jocosocial/swiftarr-socket-client/issues"
   },
   "dependencies": {
+    "@commander-js/extra-typings": "^12.0.0",
     "commander": "^12.0.0",
     "reconnecting-websocket": "^4.4.0",
+    "winston": "^3.11.0",
     "ws": "^8.16.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",
     "@types/ws": "^8.5.10",
-    "eslint": "^8.57.0"
+    "@typescript-eslint/eslint-plugin": "^6.21.0",
+    "eslint": "^8.57.0",
+    "eslint-config-standard-with-typescript": "^43.0.1",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^16.6.2",
+    "eslint-plugin-promise": "^6.1.1",
+    "typescript": "^5.3.3"
   }
 }
