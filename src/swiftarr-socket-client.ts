@@ -2,6 +2,14 @@
 
 import ReconnectingWebSocket from "reconnecting-websocket";
 import {default as WebSocket} from 'ws';
+import {Command} from 'commander';
+
+const program = new Command();
+
+program
+    .name('swiftarr-socket-client')
+    .description('CLI for Swiftarr WebSocket events')
+    .version('0.0.0')
 
 if (process.argv.length !== 4) {
     console.error('Usage: node krakentalk_listener.js <server_url> <token>');
