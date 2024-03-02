@@ -31,7 +31,7 @@ const execute = async (options: ImportCommandOptions, program: TProgram) => {
 export const setupSchedImportCommand = (program: TProgram) => {
   program.command('sched2twitarr')
     .description('Sync the Sched.com joined events with Twitarr favorited events.')
-    .option('-t, --token <string>', 'Auth token.')
+    .option('-t, --token <string>', 'Auth token. Omit for an interactive prompt.')
     .requiredOption('-u, --sched-username <string>', 'Sched.com username.')
     .option('--sched-url <string>', 'Sched.com event URL', 'https://jococruise2024.sched.com')
     .action((options) => {

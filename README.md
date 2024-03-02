@@ -4,13 +4,30 @@ swiftarr-socket-client
 ## Usage
 
 ```
+swiftarr-socket-client
+Usage: swiftarr-socket-client [options] [command]
+
+CLI for Swiftarr WebSocket events
+
+Options:
+  -V, --version              output the version number
+  -s, --server-url <string>  Server base URL including scheme.
+  -h, --help                 display help for command
+
+Commands:
+  listen [options]           Start listening to a socket.
+  login [options]            Get a token from the Twitarr server.
+  sched2twitarr [options]    Sync the Sched.com joined events with Twitarr favorited events.
+  help [command]             display help for command
+ ```
+
+```
 Usage: swiftarr-socket-client listen [options]
 
 Start listening to a socket.
 
 Options:
-  -s, --server-url <string>  Server base URL including scheme.
-  -t, --token <string>       Auth token.
+  -t, --token <string>       Auth token. Omit for an interactive prompt.
   -h, --help                 display help for command
 ```
 
@@ -20,9 +37,8 @@ Usage: swiftarr-socket-client login [options]
 Get a token from the Twitarr server.
 
 Options:
-  -s, --server-url <string>  Server base URL including scheme.
   -u, --username <string>    Username.
-  -p, --password <string>    Password.
+  -p, --password <string>    Password. Omit for an interactive prompt.
   -h, --help                 display help for command
 ```
 
@@ -32,8 +48,7 @@ Usage: swiftarr-socket-client sched2twitarr [options]
 Sync the Sched.com joined events with Twitarr favorited events.
 
 Options:
-  -s, --server-url <string>      Server base URL including scheme.
-  -t, --token <string>           Auth token.
+  -t, --token <string>           Auth token. Omit for an interactive prompt.
   -u, --sched-username <string>  Sched.com username.
   --sched-url <string>           Sched.com event URL (default: "https://jococruise2024.sched.com")
   -h, --help                     display help for command
