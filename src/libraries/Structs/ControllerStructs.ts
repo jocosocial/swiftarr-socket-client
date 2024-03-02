@@ -24,3 +24,32 @@ export interface ErrorResponse {
   /// keyed by the keypath to the fields that failed validation.
   fieldErrors?: string | string[];
 }
+
+export interface EventData {
+  /// The event's ID. This is the Swiftarr database record for this event.
+  eventID: string;
+  /// The event's UID. This is the VCALENDAR/ICS File/sched.com identifier for this event--what calendar software uses to correllate whether 2 events are the same event.
+  uid: string;
+  /// The event's title.
+  title: string;
+  /// A description of the event.
+  description: string;
+  /// Starting time of the event
+  startTime: string;
+  /// Ending time of the event.
+  endTime: string;
+  /// The timezone that the ship is going to be in when the event occurs. Delivered as an abbreviation e.g. "EST".
+  timeZone: string;
+  /// The timezone ID that the ship is going to be in when the event occurs. Example: "America/New_York".
+  timeZoneID: string;
+  /// The location of the event.
+  location: string;
+  /// The event category.
+  eventType: string;
+  /// The last time data for this event was modified. Used for change management.
+  lastUpdateTime: string;
+  /// The event's associated `Forum`.
+  forum?: string;
+  /// Whether user has favorited event.
+  isFavorite: boolean;
+}

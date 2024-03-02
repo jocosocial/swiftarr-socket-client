@@ -1,5 +1,5 @@
 import axios from "axios";
-import {apiPOST, apiPrefix} from "./APIClient";
+import {apiPOST, apiPrefix} from "./Network/APIClient";
 import {TokenStringData} from "./Structs/ControllerStructs";
 import {logger} from "./Logging";
 
