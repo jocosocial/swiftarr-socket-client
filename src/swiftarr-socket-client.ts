@@ -9,7 +9,7 @@ import {ProgramOptions} from "./libraries/Structs/ProgramStructs";
 const program = new Command<[], ProgramOptions>()
   .name('swiftarr-socket-client')
   .description('CLI for Swiftarr WebSocket events')
-  .version('0.1.0')
+  .version('0.2.0')
   .requiredOption('-s, --server-url <string>', 'Server base URL including scheme.');
 
 setupListenCommand(program);
