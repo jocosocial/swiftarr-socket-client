@@ -14,6 +14,31 @@ Options:
   -h, --help                 display help for command
 ```
 
+```
+Usage: swiftarr-socket-client login [options]
+
+Get a token from the Twitarr server.
+
+Options:
+  -s, --server-url <string>  Server base URL including scheme.
+  -u, --username <string>    Username.
+  -p, --password <string>    Password.
+  -h, --help                 display help for command
+```
+
+```
+Usage: swiftarr-socket-client sched2twitarr [options]
+
+Sync the Sched.com joined events with Twitarr favorited events.
+
+Options:
+  -s, --server-url <string>      Server base URL including scheme.
+  -t, --token <string>           Auth token.
+  -u, --sched-username <string>  Sched.com username.
+  --sched-url <string>           Sched.com event URL (default: "https://jococruise2024.sched.com")
+  -h, --help                     display help for command
+```
+
 ## Installation
 
 You need global Typescript support for this.
