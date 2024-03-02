@@ -1,23 +1,21 @@
-import {Command} from "@commander-js/extra-typings";
-import {getTokenData} from "../libraries/Auth";
+import {getTokenData, parseCredential} from "../libraries/Auth";
+import {TProgram} from "../libraries/Structs/ProgramStructs";
 
 interface LoginCommandOptions {
-  serverUrl: string;
   username: string;
-  password: string;
+  password?: string;
 }
 
-const execute = (options: LoginCommandOptions) => {
-  getTokenData(options.serverUrl, options.username, options.password);
+const execute = (options: LoginCommandOptions, program: TProgram) => {
+  getTokenData(program.opts().serverUrl, options.username, parseCredential(options.password, 'password'));
 };
 
-export const setupLoginCommand = (program: Command) => {
+export const setupLoginCommand = (program: TProgram) => {
   program.command('login')
     .description('Get a token from the Twitarr server.')
-    .requiredOption('-s, --server-url <string>', 'Server base URL including scheme.')
     .requiredOption('-u, --username <string>', 'Username.')
-    .requiredOption('-p, --password <string>', 'Password.')
+    .option('-p, --password <string>', 'Password. Or leave empty to be interactively prompted.')
     .action((options: LoginCommandOptions) => {
-      execute(options);
+      execute(options, program);
     });
 };
