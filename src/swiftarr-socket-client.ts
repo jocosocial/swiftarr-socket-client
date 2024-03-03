@@ -5,6 +5,7 @@ import {setupListenCommand} from "./commands/ListenCommand";
 import {setupLoginCommand} from "./commands/LoginCommand";
 import {setupSchedImportCommand} from "./commands/SchedImportCommand";
 import {ProgramOptions} from "./libraries/Structs/ProgramStructs";
+import {setupCallCommand} from "./commands/CallCommand";
 
 const program = new Command<[], ProgramOptions>()
   .name('swiftarr-socket-client')
@@ -15,5 +16,6 @@ const program = new Command<[], ProgramOptions>()
 setupListenCommand(program);
 setupLoginCommand(program);
 setupSchedImportCommand(program);
+setupCallCommand(program);
 
 program.parse();

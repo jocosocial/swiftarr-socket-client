@@ -36,12 +36,14 @@
     "node-ical": "^0.18.0",
     "readline-sync": "^1.4.10",
     "reconnecting-websocket": "^4.4.0",
+    "uuid": "^9.0.1",
     "winston": "^3.11.0",
     "ws": "^8.16.0"
   },
   "devDependencies": {
     "@types/node": "^20.11.20",
     "@types/readline-sync": "^1.4.8",
+    "@types/uuid": "^9.0.8",
     "@types/ws": "^8.5.10",
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "eslint": "^8.57.0",

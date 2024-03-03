@@ -17,21 +17,11 @@ function WebSocketConstructor(options: { headers: { authorization: string; }; })
 }
 
 /**
- * Get the fully-qualified socket URL endpoint.
- * Some day this should do Fez sockets too.
- * @param serverUrl String of the server URL base.
- */
-const getSocketUrl = (serverUrl: string) => {
-  return `${serverUrl}/api/v3/notification/socket`;
-};
-
-/**
  * Construct the WebSocket
- * @param serverUrl Base URL of the server (including scheme).
+ * @param socketUrl WebSocket URL endpoint.
  * @param token HTTP Bearer token
  */
-export const buildSocket = (serverUrl: string, token: string) => {
-  const socketUrl = getSocketUrl(serverUrl);
+export const buildSocket = (socketUrl: string, token: string) => {
   logger.info(`Connecting to socket at ${socketUrl}`);
   const socket = new ReconnectingWebSocket(socketUrl, [], {
     WebSocket: WebSocketConstructor({

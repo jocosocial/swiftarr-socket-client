@@ -4,7 +4,6 @@ swiftarr-socket-client
 ## Usage
 
 ```
-swiftarr-socket-client
 Usage: swiftarr-socket-client [options] [command]
 
 CLI for Swiftarr WebSocket events
@@ -18,41 +17,10 @@ Commands:
   listen [options]           Start listening to a socket.
   login [options]            Get a token from the Twitarr server.
   sched2twitarr [options]    Sync the Sched.com joined events with Twitarr favorited events.
+  call [options]             Start a pretend KrakenTalk call.
   help [command]             display help for command
+
  ```
-
-```
-Usage: swiftarr-socket-client listen [options]
-
-Start listening to a socket.
-
-Options:
-  -t, --token <string>       Auth token. Omit for an interactive prompt.
-  -h, --help                 display help for command
-```
-
-```
-Usage: swiftarr-socket-client login [options]
-
-Get a token from the Twitarr server.
-
-Options:
-  -u, --username <string>    Username.
-  -p, --password <string>    Password. Omit for an interactive prompt.
-  -h, --help                 display help for command
-```
-
-```
-Usage: swiftarr-socket-client sched2twitarr [options]
-
-Sync the Sched.com joined events with Twitarr favorited events.
-
-Options:
-  -t, --token <string>           Auth token. Omit for an interactive prompt.
-  -u, --sched-username <string>  Sched.com username.
-  --sched-url <string>           Sched.com event URL (default: "https://jococruise2024.sched.com")
-  -h, --help                     display help for command
-```
 
 ## Installation
 
