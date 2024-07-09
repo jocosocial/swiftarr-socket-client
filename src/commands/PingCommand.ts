@@ -13,7 +13,13 @@ interface TCallCommandOpts {
 
 const sendPing = (socket: ReconnectingWebSocket) => {
     logger.info('Sending socket ping');
-    socket.send("AAA")
+    const pingEvent = {
+      type: 'ping',
+      info: 'ping',
+      contentID: uuidv4(),
+    };
+    logger.info(JSON.stringify(pingEvent))
+    socket.send(JSON.stringify(pingEvent))
 }
 
 export const setupPingCommand = (program: TProgram) => {

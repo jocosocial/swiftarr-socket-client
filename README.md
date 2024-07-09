@@ -36,6 +36,12 @@ Then install the package
 npm install jocosocial/swiftarr-socket-client
 ```
 
+If developing locally, do this instead:
+```
+npm install .
+npm link
+```
+
 ## Guides & References
 
 https://nathanfriend.io/2018/06/17/shelling-with-typescript.html
