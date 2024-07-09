@@ -50,4 +50,6 @@ export const buildSocket = (socketUrl: string, token: string) => {
   socket.addEventListener('error', event => {
     logger.error(`Socket encountered an error: ${event.error}`);
   });
+
+  return socket;
 };
